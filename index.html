@@ -9,10 +9,18 @@
         /* angular-animate */
         .view.ng-enter {-webkit-transition: 0.5s linear all; transition: 0.5s linear all;position:relative;left:100%;opacity: 0;}
         .view.ng-enter.ng-enter-active {opacity: 1;left:0;}
+        #content{width:100px;height: 60px;}
     </style>
 
     <body ng-cloak>
-       555
+      <div id="content">
+        <button id="getKey">抓关键词</button>
+        <button id="getItem">抓商品</button>
+      </div>
+      
 
-    </body>
+
+      </body>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
 </html>

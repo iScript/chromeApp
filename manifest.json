@@ -1,5 +1,10 @@
 /*
- *
+ * content_scripts 在网页中注入JS
+ * background 常驻后台
+ * browser_action 工具栏的图标、HTML、标题等
+ * icons 扩展图标
+ * permissions 权限
+ * 
  */
 {
 	"name": "yApp",
@@ -7,10 +12,29 @@
 	"manifest_version" : 2,
 	"description": "The first extension that I made.",
 	"permissions": [
-    	"notifications"	//允许桌面通知
+        "http://zkhkj.com:88/*","*://www.baidu.com/*","http://*/*",
+        "notifications","tabs","contextMenus"
   	],
+    "content_scripts": [
+        {
+            "matches": ["*://lz.taobao.com/"],
+            "js": ["scripts/jquery.js","scripts/content.js"]
+        },{
+            "matches": ["*://www.baidu.com/"],
+            "js": ["scripts/jquery.js","scripts/content.js"]
+        }
+    ],
+    "icons": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "background": {
+        "scripts": ["scripts/background.js"]
+    },
 	"browser_action": {
-    	"default_icon": "icon.png",
-	    "default_popup": "index.html"
+    	"default_icon": "images/icon.png",
+	    "default_popup": "index.html",
+        "default_title": "hehe"
 	}
 }
