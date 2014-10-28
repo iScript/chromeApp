@@ -6,34 +6,10 @@ console.log("injection execItems.js");
 // 
 var url = "http://zkhkj.com:88";
 
-//获取cookie
-function getCookie(c_name)
-{
-    if (document.cookie.length>0)
-    {
-        c_start=document.cookie.indexOf(c_name + "=")
-        if (c_start!=-1)
-        {
-            c_start=c_start + c_name.length+1
-            c_end=document.cookie.indexOf(";",c_start)
-            if (c_end==-1) c_end=document.cookie.length
-            return unescape(document.cookie.substring(c_start,c_end))
-        }
-    }
-    return ""
-}
 
-// 日期函数
-function GetDateStr(AddDayCount) {
-    var dd = new Date();
-    dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
-    var y = dd.getFullYear();
-    var m = dd.getMonth()+1;//获取当前月份的日期
-    var d = dd.getDate();
-    return y+"-"+m+"-"+d;
-}
-
+var i=0;;
 $(".item-title").each(function(){
+    //return;
     var title = $(this).html();
     var href = $(this).attr("href");
     var index = href.indexOf("id=")+3;
@@ -43,7 +19,18 @@ $(".item-title").each(function(){
         type:"post",
         data : {title:title,itemid:itemid},
         success:function(d){
-            console.log(d);
+            i++;
+            var a = $("#ffix").length;
+            console.log(a);
+            if(a >0){
+                //console.log(666);
+                var s = "成功抓取数据"+i+"条";
+                $("#ffix").html(s);
+            }else{
+                //console.log(555);
+                var sv ="<div style='position:fixed;z-index:999;bottom:10px;right:10px;' id='ffix'>加载中</div>";
+                $("body").append(sv);
+            }
         }
     });
 });

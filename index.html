@@ -4,19 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
     <title>chromeApp</title>
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <style type="text/css">
         /* angular-animate */
         .view.ng-enter {-webkit-transition: 0.5s linear all; transition: 0.5s linear all;position:relative;left:100%;opacity: 0;}
         .view.ng-enter.ng-enter-active {opacity: 1;left:0;}
-        #content{width:100px;height: 60px;}
+        body{padding:10px;}
+        #content{width:200px;height: 60px;}
+        h1{font-size: 14px;}
     </style>
 
     <body ng-cloak>
-      <div id="content">
-        <button id="getKey">抓关键词</button>
-        <button id="getItem">抓商品</button>
-      </div>
+        <h1>淘宝工具</h1>
+        <div id="content">
+            <button id="getKey" class="btn btn-info">抓关键词</button>
+            <button id="getItem" class="btn btn-info">抓商品</button>
+        </div>
       
 
 

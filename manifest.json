@@ -17,10 +17,7 @@
   	],
     "content_scripts": [
         {
-            "matches": ["*://lz.taobao.com/"],
-            "js": ["scripts/jquery.js","scripts/content.js"]
-        },{
-            "matches": ["*://www.baidu.com/"],
+            "matches": ["*://www.baidu2.com/"],
             "js": ["scripts/jquery.js","scripts/content.js"]
         }
     ],
