@@ -24,10 +24,12 @@ function keywords(){
                 var $itemid = data[i];
                 var $date = GetDateStr(-1);
                 var $url = "http://api.linezing.com/=/view/standard/search/itemkey?date="+$date+"&limit="+$limit+"&order=avg_search_rank&sort=desc&offset=10&item="+$itemid+"&_s="+$_s+"&_c="+$_c;
-                           console.log($url);
+                console.log($url);
                 var str =$.ajax({url:$url,async:false});
                 str = str.responseText;
                 console.log("str:" + str);
+                
+                if(str.length == 11) return;
                 
                 //发送服务器。
                 $.ajax({
@@ -36,6 +38,8 @@ function keywords(){
                     data : {d:str,itemid:$itemid,date:$date},
                     success:function(d){
                         console.log(d);
+                        var sv ="<div style='position:fixed;z-index:999;bottom:10px;right:10px;border:1px solid red' id='ffix'>开始抓取数据。。。</div>";
+                        $("body").append(sv);
                     }
                 });
             })(i);
@@ -43,7 +47,11 @@ function keywords(){
     });
 }
 keywords();
-setInterval(function(){
+var timer = setInterval(function(){
     keywords();
 },60*60*1000);
+
+
+
+
 

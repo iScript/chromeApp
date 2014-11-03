@@ -10,18 +10,37 @@
         .view.ng-enter {-webkit-transition: 0.5s linear all; transition: 0.5s linear all;position:relative;left:100%;opacity: 0;}
         .view.ng-enter.ng-enter-active {opacity: 1;left:0;}
         body{padding:10px;}
-        #content{width:200px;height: 60px;}
+        #cn{width:230px;height: 60px;}
         h1{font-size: 14px;}
     </style>
 
     <body ng-cloak>
-        <h1>淘宝工具</h1>
-        <div id="content">
-            <button id="getKey" class="btn btn-info">抓关键词</button>
-            <button id="getItem" class="btn btn-info">抓商品</button>
+        <div id="cn">
+            <div id="cc" style="display:none">
+                <h1>淘宝工具</h1>
+                <p><span id="user"></span><a id="logout" href="#">退出</a></p>
+                <div id="content">
+                    <button id="getKey" class="btn btn-info">抓关键词</button>
+                    <button id="getItem" class="btn btn-info">抓商品</button>
+                </div>
+            </div>
+            
+            <div id="login" style="display:none">
+                <h1>登陆</h1>
+                <p class="info"></p>
+                <form role="form" >
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email </label>
+                    <input type="email"  class="form-control email" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" class="form-control password" id="exampleInputPassword1 password" placeholder="Password">
+                  </div>
+                  <button type="button" id="send" class="btn btn-default">登陆</button>
+                </form>
+            </div>
         </div>
-      
-
 
       </body>
     <script type="text/javascript" src="scripts/jquery.js"></script>
