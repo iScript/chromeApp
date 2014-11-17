@@ -24,5 +24,8 @@ function GetDateStr(AddDayCount) {
     var y = dd.getFullYear();
     var m = dd.getMonth()+1;//获取当前月份的日期
     var d = dd.getDate();
+    m+= "";d+="";
+    if(m.length==1) m="0"+m;
+    if(d.length==1) d="0"+d;
     return y+"-"+m+"-"+d;
 }

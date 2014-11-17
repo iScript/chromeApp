@@ -23,7 +23,7 @@ function keywords(){
             (function(i){
                 var $itemid = data[i];
                 var $date = GetDateStr(-1);
-                var $url = "http://api.linezing.com/=/view/standard/search/itemkey?date="+$date+"&limit="+$limit+"&order=avg_search_rank&sort=desc&offset=10&item="+$itemid+"&_s="+$_s+"&_c="+$_c;
+                var $url = "http://api.linezing.com/=/view/standard/search/itemkey?date="+$date+"&limit="+$limit+"&order=avg_search_rank&sort=desc&offset=0&item="+$itemid+"&_s="+$_s+"&_c="+$_c;
                 console.log($url);
                 var str =$.ajax({url:$url,async:false});
                 str = str.responseText;
